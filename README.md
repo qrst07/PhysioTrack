@@ -1,3 +1,17 @@
+# PhysioTrack
+Based on MetaWear Starter app. 
+
+Dependencies:
+- Homebrew
+
+Steps:
+1. `brew install cocoapods` - run `cocoapods` to check installed
+2. `git clone --recurse-submodules [this repo]` , otherwise install cpp submodule separately. regular clone will complain about missing Cpp import
+3. `cd StarterProject`
+4. `pod update`
+
+When testing, set all build settings to iOS of device you're testing
+
 # MetaWear  SDK for iOS/macOS/tvOS/watchOS by MBIENTLAB
 
 [![Platforms](https://img.shields.io/cocoapods/p/MetaWear.svg?style=flat)](http://cocoapods.org/pods/MetaWear)
