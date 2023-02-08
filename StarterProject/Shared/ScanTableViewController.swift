@@ -83,7 +83,7 @@ class ScanTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        hud = MBProgressHUD.showAdded(to: UIApplication.shared.keyWindow!, animated: true)
+        hud = MBProgressHUD.showAdded(to: UIApplication.shared.windows.filter {$0.isKeyWindow}.first!, animated: true)
         hud?.label.text = "Connecting..."
         
         scannerModel.items[indexPath.row].toggleConnect()

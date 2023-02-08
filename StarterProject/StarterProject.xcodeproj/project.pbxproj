@@ -636,7 +636,7 @@
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mbientlab.StarterProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mbientlab.StarterProjecttest;
 				PRODUCT_NAME = StarterProject;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -657,7 +657,7 @@
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mbientlab.StarterProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mbientlab.StarterProjecttest;
 				PRODUCT_NAME = StarterProject;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

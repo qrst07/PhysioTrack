@@ -104,4 +104,28 @@ class DeviceViewController: UIViewController {
         device.flashLED(color: .red, intensity: 1.0, _repeat: 3)
         mbl_mw_debug_disconnect(device.board)
     }
+    
+    @IBAction func startPressed(sender: AnyObject) {
+        let board = device.board
+        guard mbl_mw_metawearboard_lookup_module(board, MBL_MW_MODULE_ACCELEROMETER) != MBL_MW_MODULE_TYPE_NA else {
+            print("No accelerometer")
+            return
+        }
+        let signal = mbl_mw_acc_get_acceleration_data_signal(board)
+        mbl_mw_datasignal_subscribe(signal, bridge(obj: self)) { (context, data) in
+            let _self: DeviceViewController = bridge(ptr: context!)
+            let obj: MblMwCartesianFloat = data!.pointee.valueAs()
+            print(obj)
+        }
+        mbl_mw_acc_enable_acceleration_sampling(board)
+        mbl_mw_acc_start(board)
+    }
+
+    @IBAction func stopPressed(sender: AnyObject) {
+        let board = device.board
+        let signal = mbl_mw_acc_get_acceleration_data_signal(board)
+        mbl_mw_acc_stop(board)
+        mbl_mw_acc_disable_acceleration_sampling(board)
+        mbl_mw_datasignal_unsubscribe(signal)
+    }
 }
